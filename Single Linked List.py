@@ -21,11 +21,12 @@ class SLL:
             curr.next = node
     
     def rem_rec(self, curr):
-        if(curr == None):
+        if(curr.next == None):
             return 
         else:
             if(curr.data >= curr.next.data):
                 curr.next = curr.next.next
+                return self.rem_rec(curr)
             return self.rem_rec(curr.next)
 
 class Node:
